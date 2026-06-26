@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Login Section -->
+    <div id="loginSection" class="card">
+        <h1>🏦 ATM Interface</h1>
+        <h2>Login</h2>
+
+        <input type="text" id="userId" placeholder="Enter User ID">
+        <input type="password" id="pin" placeholder="Enter PIN">
+
+        <button onclick="login()">Login</button>
+
+        <p id="loginMessage"></p>
+    </div>
+
+    <!-- ATM Dashboard -->
+    <div id="atmSection" class="card hidden">
+
+        <h1>Welcome to ATM</h1>
+
+        <div class="balance">
+            <h2>Current Balance</h2>
+            <h3>₹ <span id="balance">5000</span></h3>
+        </div>
+
+        <div class="buttons">
+
+            <button onclick="showDeposit()">
+                💰 Deposit
+            </button>
+
+            <button onclick="showWithdraw()">
+                🏧 Withdraw
+            </button>
+
+            <button onclick="showTransfer()">
+                🔄 Transfer
+            </button>
+
+            <button onclick="showHistory()">
+                📜 Transaction History
+            </button>
+
+            <button onclick="logout()">
+                🚪 Logout
+            </button>
+
+        </div>
+
+        <!-- Deposit -->
+        <div id="depositBox" class="operation hidden">
+            <h3>Deposit Money</h3>
+            <input type="number" id="depositAmount" placeholder="Enter Amount">
+            <button onclick="deposit()">Deposit</button>
+        </div>
+
+        <!-- Withdraw -->
+        <div id="withdrawBox" class="operation hidden">
+            <h3>Withdraw Money</h3>
+            <input type="number" id="withdrawAmount" placeholder="Enter Amount">
+            <button onclick="withdraw()">Withdraw</button>
+        </div>
+
+        <!-- Transfer -->
+        <div id="transferBox" class="operation hidden">
+            <h3>Transfer Money</h3>
+
+            <input type="text" id="receiver" placeholder="Receiver Name">
+
+            <input type="number" id="transferAmount" placeholder="Enter Amount">
+
+            <button onclick="transfer()">Transfer</button>
+
+        </div>
+
+        <!-- Transaction History -->
+        <div id="historyBox" class="operation hidden">
+            <h3>Transaction History</h3>
+
+            <ul id="historyList">
+
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
